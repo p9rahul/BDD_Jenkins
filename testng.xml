@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="SimpleTest">
+<parameter name="tc1" value="src/test/resources/FeatueFiles/Soumya1.feature"/>
+<parameter name="tc2" value="GetClassOfServiceResource"/>
+<test name="testing">
+<classes>
+<class name="MyRunner.TestNGTestRunner">
+</class>
+</classes>
+</test>
+</suite>

@@ -53,8 +53,6 @@
 			<scope>test</scope>
 		</dependency>
 
-
-
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
 			<artifactId>selenium-java</artifactId>
@@ -67,14 +65,6 @@
 			<artifactId>cucumber-picocontainer</artifactId>
 			<version>1.2.5</version>
 			<scope>test</scope>
-		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/io.rest-assured/rest-assured -->
-		<dependency>
-		    <groupId>io.rest-assured</groupId>
-		    <artifactId>rest-assured</artifactId>
-		    <version>3.0.0</version>
-		    <scope>test</scope>
 		</dependency>
 		
 		<dependency>
@@ -107,7 +97,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.19.1</version>
                 <configuration>
-                <suiteXmlFile>${project.build.directory}/testng.xml</suiteXmlFile>
+                <suiteXmlFile>${project.build.directory}/tempSuite.xml</suiteXmlFile>
                     <testFailureIgnore>true</testFailureIgnore>
                 </configuration>
             </plugin>
@@ -124,7 +114,7 @@
                         </goals>
                         <configuration>
                             <projectName>ExecuteAutomation</projectName>
-                            <outputDirectory>${project.build.directory}/cucumber-report-html</outputDirectory>
+                            <outputDirectory>${project.build.directory}/GraphReport</outputDirectory>
                             <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
                         </configuration>
                     </execution>

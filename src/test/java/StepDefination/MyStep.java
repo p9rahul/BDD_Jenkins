@@ -26,6 +26,7 @@ public class MyStep {
 		// Verify application lunches successfully
 		String textVerify = driver.findElement(By.xpath("//*[@class='jumbotron__title']")).getText();
 		Assert.assertEquals("We Deliver 2 Billion Forecasts Per Day", textVerify);
+		
 	}
 
 	@When("^Enters an invalid city name \"([^\"]*)\"$")

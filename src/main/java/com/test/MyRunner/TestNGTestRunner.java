@@ -25,6 +25,7 @@ public class TestNGTestRunner extends AbstractTestNGCucumberTests {
 		Class<?> testClass = this.getClass();
 		changeCucumberAnnotation(testClass, "features", new String[] { featurePath });
 		changeCucumberAnnotation(testClass, "tags", new String[] { tags });
+		
 	}
 
 	private static void changeCucumberAnnotation(Class<?> clazz, String key, Object newValue)

@@ -1,5 +1,6 @@
 Feature: open weather map application
 
+
   @Smoke
   Scenario: 1.Verify all menu & links on the page
     Given Starts on the "https://openweathermap.org/"

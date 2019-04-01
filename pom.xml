@@ -6,7 +6,6 @@
   
   	<dependencies>
 
-
 		<dependency>
 			<groupId>info.cukes</groupId>
 			<artifactId>cucumber-java</artifactId>

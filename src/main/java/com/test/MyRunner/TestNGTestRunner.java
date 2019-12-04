@@ -15,14 +15,15 @@ import cucumber.api.testng.AbstractTestNGCucumberTests;
 
 @CucumberOptions(glue ={"StepDefination"},format = { "json:target/cucumber.json",
 		"html:target/Reports" })
-
 public class TestNGTestRunner extends AbstractTestNGCucumberTests {
 
 	@Parameters({ "featureFile", "tags"})
 	@BeforeTest
 	public void setUpTest(String featurePath,String tags)
 			throws Exception {
+		System.out.println("---------------@BeforeTest----------------------");
 		Class<?> testClass = this.getClass();
+		featurePath="src/test/resources/"+featurePath;
 		changeCucumberAnnotation(testClass, "features", new String[] { featurePath });
 		changeCucumberAnnotation(testClass, "tags", new String[] { tags });
 		

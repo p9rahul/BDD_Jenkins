@@ -7,7 +7,7 @@ Feature: open weather map application
       | Support Center                 |
       | Weather in your city            |
       | 5 day / 3 hour weather forecast |
-      | 16 day / daily weather forecast |
+      | 16 day / daily weather forecast1 |
 
   @Smoke1
   Scenario: 2.Verify invalid city temperature

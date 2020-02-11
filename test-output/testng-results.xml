@@ -1,20 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results skipped="0" failed="1" total="1" passed="0">
+<testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="16025" started-at="2019-12-04T19:39:11Z" finished-at="2019-12-04T19:39:27Z">
+  <suite name="Suite" duration-ms="9793" started-at="2020-02-11T09:14:50Z" finished-at="2020-02-11T09:15:00Z">
     <groups>
       <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@589838eb]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
+        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
       </group> <!-- cucumber -->
     </groups>
-    <test name="testing" duration-ms="16025" started-at="2019-12-04T19:39:11Z" finished-at="2019-12-04T19:39:27Z">
+    <test name="testing" duration-ms="9793" started-at="2020-02-11T09:14:50Z" finished-at="2020-02-11T09:15:00Z">
       <class name="com.test.MyRunner.TestNGTestRunner">
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@589838eb]" name="setUpTest" is-config="true" duration-ms="19" started-at="2019-12-05T01:09:11Z" finished-at="2019-12-05T01:09:11Z">
+        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="setUpTest" is-config="true" duration-ms="66" started-at="2020-02-11T14:44:50Z" finished-at="2020-02-11T14:44:50Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[FeatueFiles/temprature.feature]]>
+                <![CDATA[FeatueFiles/ApiTestCases/ApiTestCase.feature]]>
               </value>
             </param>
             <param index="1">
@@ -26,61 +26,22 @@
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@589838eb]" name="setUpClass" is-config="true" duration-ms="322" started-at="2019-12-05T01:09:11Z" finished-at="2019-12-05T01:09:11Z">
+        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="setUpClass" is-config="true" duration-ms="830" started-at="2020-02-11T14:44:50Z" finished-at="2020-02-11T14:44:51Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUpClass -->
-        <test-method status="FAIL" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@589838eb]" name="feature" duration-ms="15432" started-at="2019-12-05T01:09:11Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2019-12-05T01:09:27Z">
+        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="feature" duration-ms="8518" started-at="2020-02-11T14:44:51Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-02-11T14:45:00Z">
           <params>
             <param index="0">
               <value>
-                <![CDATA[open weather map application]]>
+                <![CDATA[Api service test]]>
               </value>
             </param>
           </params>
-          <exception class="cucumber.runtime.CucumberException">
-            <message>
-              <![CDATA[java.lang.AssertionError: Support Center1 not found on the page]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[cucumber.runtime.CucumberException: java.lang.AssertionError: Support Center1 not found on the page
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
-	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
-	at java.lang.reflect.Method.invoke(Unknown Source)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:86)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:643)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:820)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1128)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:129)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:112)
-	at org.testng.TestRunner.privateRun(TestRunner.java:782)
-	at org.testng.TestRunner.run(TestRunner.java:632)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:366)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:361)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:319)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:268)
-	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1244)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1169)
-	at org.testng.TestNG.run(TestNG.java:1064)
-	at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-	at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-	at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-Caused by: java.lang.AssertionError: Support Center1 not found on the page
-	at org.testng.Assert.fail(Assert.java:94)
-	at StepDefination.MyStep.verify_below_links_on_the_website(MyStep.java:99)
-	at ✽.Then verify below links on the website(src/test/resources/FeatueFiles/temprature.feature:7)
-]]>
-            </full-stacktrace>
-          </exception> <!-- cucumber.runtime.CucumberException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@589838eb]" name="tearDownClass" is-config="true" duration-ms="107" started-at="2019-12-05T01:09:27Z" finished-at="2019-12-05T01:09:27Z">
+        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="tearDownClass" is-config="true" duration-ms="47" started-at="2020-02-11T14:45:00Z" finished-at="2020-02-11T14:45:00Z">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- tearDownClass -->

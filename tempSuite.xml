@@ -3,7 +3,7 @@
 
 <suite name="Suite">
   <test name="testing">
-		<parameter name="featureFile" value="FeatueFiles/temprature.feature" />
+		<parameter name="featureFile" value="FeatueFiles/ApiTestCases/ApiTestCase.feature" />
 		<parameter name="tags" value="@Smoke" />
 		<classes>
 			<class name="com.test.MyRunner.TestNGTestRunner" />

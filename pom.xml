@@ -1,10 +1,12 @@
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-  <modelVersion>4.0.0</modelVersion>
-  <groupId>BDD_First</groupId>
-  <artifactId>BDD_FirstProject</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
-  
-  	<dependencies>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>BDD_First</groupId>
+	<artifactId>BDD_FirstProject</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<dependencies>
 
 		<dependency>
 			<groupId>info.cukes</groupId>
@@ -13,44 +15,20 @@
 			<scope>test</scope>
 		</dependency>
 
-		<!-- <dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-jvm</artifactId>
-			<version>1.2.5</version>
-			<type>pom</type>
-		</dependency>
+		<!-- <dependency> <groupId>info.cukes</groupId> <artifactId>cucumber-jvm</artifactId> 
+			<version>1.2.5</version> <type>pom</type> </dependency> <dependency> <groupId>info.cukes</groupId> 
+			<artifactId>cucumber-junit</artifactId> <version>1.2.5</version> <scope>test</scope> 
+			</dependency> <dependency> <groupId>info.cukes</groupId> <artifactId>cucumber-jvm-deps</artifactId> 
+			<version>1.0.5</version> </dependency> -->
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-junit</artifactId>
-			<version>1.2.5</version>
-			<scope>test</scope>
-		</dependency>
+		<!-- <dependency> <groupId>net.masterthought</groupId> <artifactId>cucumber-reporting</artifactId> 
+			<version>1.0.0</version> </dependency> -->
 
-		<dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>cucumber-jvm-deps</artifactId>
-			<version>1.0.5</version>
-		</dependency> -->
+		<!-- <dependency> <groupId>info.cukes</groupId> <artifactId>gherkin</artifactId> 
+			<version>2.12.2</version> </dependency> -->
 
-	<!-- 	<dependency>
-			<groupId>net.masterthought</groupId>
-			<artifactId>cucumber-reporting</artifactId>
-			<version>1.0.0</version>
-		</dependency> -->
-
-		<!-- <dependency>
-			<groupId>info.cukes</groupId>
-			<artifactId>gherkin</artifactId>
-			<version>2.12.2</version>
-		</dependency> -->
-
-<!-- 		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>3.8.1</version>
-			<scope>test</scope>
-		</dependency> -->
+		<!-- <dependency> <groupId>junit</groupId> <artifactId>junit</artifactId> 
+			<version>3.8.1</version> <scope>test</scope> </dependency> -->
 
 		<dependency>
 			<groupId>org.seleniumhq.selenium</groupId>
@@ -65,63 +43,101 @@
 			<version>1.2.5</version>
 			<scope>test</scope>
 		</dependency>
-		
-		<dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-testng</artifactId>
-            <version>1.2.5</version>
-		</dependency>
-		
-		<dependency>
-            <groupId>org.testng</groupId>
-            <artifactId>testng</artifactId>
-            <version>6.9.10</version>
-		</dependency>
-		
-	</dependencies>
-	
-	    <build>
-        <plugins>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.5</version>
-                <configuration>
-                <source>1.8</source>
-                <target>1.8</target>
-            	</configuration>
-            </plugin>
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>3.0.0-M4</version>
-                <configuration>
-                <suiteXmlFiles>
-                        <suiteXmlFile>tempSuite.xml</suiteXmlFile>
-                    </suiteXmlFiles>
-                    <testFailureIgnore>true</testFailureIgnore>
-                </configuration>
-            </plugin>
-            <plugin>
-                <groupId>net.masterthought</groupId>
-                <artifactId>maven-cucumber-reporting</artifactId>
-                <version>3.0.0</version>
-                <executions>
-                    <execution>
-                        <id>execution</id>
-                        <phase>verify</phase>
-                        <goals>
-                            <goal>generate</goal>
-                        </goals>
-                        <configuration>
-                            <projectName>ExecuteAutomation</projectName>
-                            <outputDirectory>${project.build.directory}/GraphReport</outputDirectory>
-                            <cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
-                        </configuration>
-                    </execution>
-                </executions>
-            </plugin>
 
-        </plugins>
-</build>
+		<dependency>
+			<groupId>info.cukes</groupId>
+			<artifactId>cucumber-testng</artifactId>
+			<version>1.2.5</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.9.10</version>
+		</dependency>
+
+		<!-- POI start -->
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi</artifactId>
+			<version>3.15</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.poi</groupId>
+			<artifactId>poi-ooxml</artifactId>
+			<version>3.15</version>
+		</dependency>
+		<!-- POI End -->
+
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.itextpdf/itextpdf -->
+		<dependency>
+			<groupId>com.itextpdf</groupId>
+			<artifactId>itextpdf</artifactId>
+			<version>5.0.6</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.restassured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<version>2.9.0</version>
+		</dependency>
+
+		<dependency>
+			<groupId>com.jayway.jsonpath</groupId>
+			<artifactId>json-path</artifactId>
+			<version>2.4.0</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.5</version>
+				<configuration>
+					<source>1.8</source>
+					<target>1.8</target>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>3.0.0-M4</version>
+				<configuration>
+					<suiteXmlFiles>
+						<suiteXmlFile>tempSuite.xml</suiteXmlFile>
+					</suiteXmlFiles>
+					<testFailureIgnore>true</testFailureIgnore>
+				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>net.masterthought</groupId>
+				<artifactId>maven-cucumber-reporting</artifactId>
+				<version>3.0.0</version>
+				<executions>
+					<execution>
+						<id>execution</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>generate</goal>
+						</goals>
+						<configuration>
+							<projectName>ExecuteAutomation</projectName>
+							<outputDirectory>${project.build.directory}/GraphReport</outputDirectory>
+							<cucumberOutput>${project.build.directory}/cucumber.json</cucumberOutput>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+		</plugins>
+	</build>
 </project>

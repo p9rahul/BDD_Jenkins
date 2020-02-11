@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite, 1 failed test</span>
+      <span class="top-banner-font-1">1 suite</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" class="navigator-link" panel-name="suite-Suite">
-              <span class="suite-name border-failed">Suite</span>
+              <span class="suite-name border-passed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,21 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">1 method, 1 failed,   </span>
+                    <span class="method-stats">1 method,   1 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title failed">Failed methods</span>
-                    <span class="show-or-hide-methods failed">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
                     </span>
-                    <div class="method-list-content failed suite-Suite">
+                    <div class="method-list-content passed suite-Suite">
                       <span>
-                        <img width="3%" src="failed.png"/>
-                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.test.MyRunner.TestNGTestRunner" hash-for-method="feature(open weather map application)">feature(open weather map application)</a> <!-- method navigator-link -->
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Suite" title="com.test.MyRunner.TestNGTestRunner" hash-for-method="feature(Api service test)">feature(Api service test)</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content failed suite-Suite -->
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -117,32 +117,24 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-failed">
+          <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
-              <img src="failed.png"/>
+              <img src="passed.png"/>
               <span class="class-name">com.test.MyRunner.TestNGTestRunner</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="feature(open weather map application)">
-                  </a> <!-- feature(open weather map application) -->
+                  <a name="feature(Api service test)">
+                  </a> <!-- feature(Api service test) -->
                   <span class="method-name">feature</span>
-                  <span class="parameters">(open weather map application)</span>
-                  <div class="stack-trace">cucumber.runtime.CucumberException: java.lang.AssertionError: Support Center1 not found on the page
-	at cucumber.api.testng.TestNGCucumberRunner.runCucumber(TestNGCucumberRunner.java:69)
-	at cucumber.api.testng.AbstractTestNGCucumberTests.feature(AbstractTestNGCucumberTests.java:21)
-Caused by: java.lang.AssertionError: Support Center1 not found on the page
-	at StepDefination.MyStep.verify_below_links_on_the_website(MyStep.java:99)
-	at ✽.Then verify below links on the website(src/test/resources/FeatueFiles/temprature.feature:7)
-... Removed 25 stack frames
-</div> <!-- stack-trace -->
+                  <span class="parameters">(Api service test)</span>
                   <em>
 (Runs Cucumber Feature)                  </em>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-failed -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -154,7 +146,7 @@ Caused by: java.lang.AssertionError: Support Center1 not found on the page
 &lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite guice-stage=&quot;DEVELOPMENT&quot; name=&quot;Suite&quot;&gt;
   &lt;test name=&quot;testing&quot;&gt;
-    &lt;parameter name=&quot;featureFile&quot; value=&quot;FeatueFiles/temprature.feature&quot;/&gt;
+    &lt;parameter name=&quot;featureFile&quot; value=&quot;FeatueFiles/ApiTestCases/ApiTestCase.feature&quot;/&gt;
     &lt;parameter name=&quot;tags&quot; value=&quot;@Smoke&quot;/&gt;
     &lt;classes&gt;
       &lt;class name=&quot;com.test.MyRunner.TestNGTestRunner&quot;/&gt;
@@ -209,12 +201,12 @@ data.addRows(1);
 data.setCell(0, 0, 0)
 data.setCell(0, 1, 'feature')
 data.setCell(0, 2, 'com.test.MyRunner.TestNGTestRunner')
-data.setCell(0, 3, 15432);
+data.setCell(0, 3, 8518);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 15 seconds</span>
+              <span class="suite-total-time">Total running time: 8 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -242,22 +234,20 @@ return data;
             <div class="chronological-class">
               <div class="chronological-class-name">com.test.MyRunner.TestNGTestRunner</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
-                <span class="method-name">setUpTest(FeatueFiles/temprature.feature, @Smoke)</span>
+                <span class="method-name">setUpTest(FeatueFiles/ApiTestCases/ApiTestCase.feature, @Smoke)</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">setUpClass</span>
-                <span class="method-start">25 ms</span>
+                <span class="method-start">86 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">feature(open weather map application)</span>
-                <span class="method-start">463 ms</span>
+                <span class="method-name">feature(Api service test)</span>
+                <span class="method-start">1197 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">tearDownClass</span>
-                <span class="method-start">15910 ms</span>
+                <span class="method-start">9730 ms</span>
               </div> <!-- configuration-class after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

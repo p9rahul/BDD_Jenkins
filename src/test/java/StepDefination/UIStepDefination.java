@@ -16,7 +16,7 @@ import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
-public class MyStep {
+public class UIStepDefination {
 
 	WebDriver driver = null;
 
@@ -101,15 +101,15 @@ public class MyStep {
 		}
 	}
 
-	@Before
-	public void hookBefore() {
-		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rahul\\eclipse-workspace\\BDD_Jenkins\\src\\test\\resources\\DriversFile\\chromedriver.exe");
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
-
-	@After
-	public void afterHook() {
-		driver.close();
-	}
+//	@Before
+//	public void hookBefore() {
+//		System.setProperty("webdriver.chrome.driver", "C:\\Users\\Rahul\\eclipse-workspace\\BDD_Jenkins\\src\\test\\resources\\DriversFile\\chromedriver.exe");
+//		driver = new ChromeDriver();
+//		driver.manage().window().maximize();
+//	}
+//
+//	@After
+//	public void afterHook() {
+//		driver.close();
+//	}
 }

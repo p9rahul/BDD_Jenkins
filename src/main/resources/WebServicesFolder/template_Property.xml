@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <products>
    <product id="p1">
-      <name>${name1}</name>
-      <price>10</price>
+      <name>${Product1}</name>
+      <price>${Price1}</price>
    </product>
    <product id="p2">
-      <name>${name2}</name>
-      <price>20</price>
+      <name>${Product2}</name>
+      <price>${Price2}</price>
    </product>
    <product id="p3">
-      <name>${name3}</name>
-      <price>30</price>
+      <name>${Product3}</name>
+      <price>${Price3}</price>
    </product>
 </products>

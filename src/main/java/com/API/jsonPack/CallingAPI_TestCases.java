@@ -16,10 +16,10 @@ public class CallingAPI_TestCases {
 
 		jsonUtility.getRequest("https://reqres.in/api/users?page=2");
 
-		String empDetails = jsonUtility.getValueFromResponse(FindJsonPath.id) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.first_name) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.last_name) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.firstEmail);
+		String empDetails = jsonUtility.getValueFromResponse(JsonPOM.id) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.first_name) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.last_name) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.firstEmail);
 		
 		System.out.println(empDetails);
 	}
@@ -27,10 +27,10 @@ public class CallingAPI_TestCases {
 	@Test(dependsOnMethods={"apiTC1"})
 	public void apiTC2() {
 
-		String empDetails = jsonUtility.getValueFromResponse(FindJsonPath.id) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.first_name) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.last_name) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.firstEmail);
+		String empDetails = jsonUtility.getValueFromResponse(JsonPOM.id) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.first_name) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.last_name) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.firstEmail);
 		
 		System.out.println(empDetails);
 	}

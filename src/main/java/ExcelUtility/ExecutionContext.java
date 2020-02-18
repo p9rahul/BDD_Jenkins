@@ -9,5 +9,6 @@ public class ExecutionContext {
 	public XSSFSheet sheet;
 	public HashMap testdata =null;
 	public static String jsonResponseAll=null;
+	public String apiJsonRequestTemplate=null;
 
 }

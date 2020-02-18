@@ -1,7 +1,6 @@
 package com.API.jsonPack;
 
-public class FindJsonPath {
-
+public class JsonPOM {
 	public static String id ="$..data[0].id";
 	public static String allEmails ="$..email";
 	public static String firstEmail ="$..data[0].email";

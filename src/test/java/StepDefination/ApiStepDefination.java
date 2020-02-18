@@ -1,6 +1,6 @@
 package StepDefination;
 
-import com.API.jsonPack.FindJsonPath;
+import com.API.jsonPack.JsonPOM;
 import com.API.jsonPack.JsonUtility;
 import cucumber.api.java.en.Given;
 import cucumber.api.java.en.Then;
@@ -27,15 +27,15 @@ public class ApiStepDefination {
 
 	@Then("^verify the email id$")
 	public void verify_the_email_id() {
-		String email = jsonUtility.getValueFromResponse(FindJsonPath.firstEmail);
+		String email = jsonUtility.getValueFromResponse(JsonPOM.firstEmail);
 
 		System.out.println(email);
 	}
 
 	@Then("^verify the first name and last name$")
 	public void verify_the_first_name_and_last_name() {
-		String name = jsonUtility.getValueFromResponse(FindJsonPath.first_name) + " "
-				+ jsonUtility.getValueFromResponse(FindJsonPath.last_name);
+		String name = jsonUtility.getValueFromResponse(JsonPOM.first_name) + " "
+				+ jsonUtility.getValueFromResponse(JsonPOM.last_name);
 		System.out.println(name);
 	}
 

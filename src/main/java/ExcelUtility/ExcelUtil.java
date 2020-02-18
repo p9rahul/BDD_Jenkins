@@ -3,12 +3,11 @@ package ExcelUtility;
 import java.io.File;
 import java.io.FileInputStream;
 import java.util.HashMap;
-
+import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.xssf.usermodel.XSSFFormulaEvaluator;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 
 //Equifax excel utility
 public class ExcelUtil {
@@ -35,6 +34,7 @@ public class ExcelUtil {
 		}
 	}
 	
+	//implemented in equifax mortgage connect
 	public HashMap<String, String> readData(String key, String value)
 	{
 		HashMap<String, String> data =new HashMap<String, String>();
@@ -89,4 +89,56 @@ public class ExcelUtil {
 		
 	}
 
+	/*
+	 * it is same as above except DataFormatter
+	 * No need to read excel cell like integer ot string
+	 */
+	public HashMap<String, String> readData1(String key, String value)
+	{
+		HashMap<String, String> data =new HashMap<String, String>();
+		DataFormatter dataformatter=new DataFormatter();
+		
+		int cellValue = 0;
+		int rowValue = 0;
+		int rowCount = sheet.getPhysicalNumberOfRows();
+		row = sheet.getRow(0);
+		int columnsCount = row.getPhysicalNumberOfCells();
+		
+		for(int j=0;j<columnsCount;j++)
+		{
+			if(row.getCell(j).getStringCellValue().trim().equals(key.trim()))
+			{
+				cellValue=j;
+				break;
+			}
+		}
+		
+		for(int i=0;i<rowCount;i++)
+		{
+			row = sheet.getRow(i);
+			if(row.getCell(cellValue).getStringCellValue().trim().equals(value.trim()))
+			{
+				rowValue =i;
+				break;
+			}
+		}
+		
+		for(int i=0;i<columnsCount;i++)
+		{
+			rowHeader = sheet.getRow(0);
+			String keyName = rowHeader.getCell(i).getStringCellValue().trim();	
+			row = sheet.getRow(rowValue);
+			String valueName =null;
+			
+			try{
+				valueName = dataformatter.formatCellValue(row.getCell(i)).trim();
+				data.put(keyName, valueName);
+			}catch(Exception e){
+				data.put(keyName, null);
+			}
+		}
+		return data;
+		
+	}
+	
 }

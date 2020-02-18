@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products>
+	<product id="p1" state="KA" city="Bangalore">
+		<name>Apple</name>
+		<price>14</price>
+	</product>
+	<product id="p2">
+		<name>SamSung</name>
+		<price>15</price>
+	</product>
+	<product id="p3">
+		<name>Nokia</name>
+		<price>16</price>
+	</product>
+</products>

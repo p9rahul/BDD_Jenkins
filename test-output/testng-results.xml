@@ -2,50 +2,16 @@
 <testng-results skipped="0" failed="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Suite" duration-ms="9793" started-at="2020-02-11T09:14:50Z" finished-at="2020-02-11T09:15:00Z">
+  <suite name="Default suite" duration-ms="81415" started-at="2020-02-12T14:39:30Z" finished-at="2020-02-12T14:40:51Z">
     <groups>
-      <group name="cucumber">
-        <method signature="AbstractTestNGCucumberTests.feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="feature" class="cucumber.api.testng.AbstractTestNGCucumberTests"/>
-      </group> <!-- cucumber -->
     </groups>
-    <test name="testing" duration-ms="9793" started-at="2020-02-11T09:14:50Z" finished-at="2020-02-11T09:15:00Z">
-      <class name="com.test.MyRunner.TestNGTestRunner">
-        <test-method status="PASS" signature="setUpTest(java.lang.String, java.lang.String)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="setUpTest" is-config="true" duration-ms="66" started-at="2020-02-11T14:44:50Z" finished-at="2020-02-11T14:44:50Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[FeatueFiles/ApiTestCases/ApiTestCase.feature]]>
-              </value>
-            </param>
-            <param index="1">
-              <value>
-                <![CDATA[@Smoke]]>
-              </value>
-            </param>
-          </params>
+    <test name="Default test" duration-ms="81415" started-at="2020-02-12T14:39:30Z" finished-at="2020-02-12T14:40:51Z">
+      <class name="com.API.xmlPack.XmlParametrization">
+        <test-method status="PASS" signature="parametTC()[pri:0, instance:com.API.xmlPack.XmlParametrization@384ad17b]" name="parametTC" duration-ms="81383" started-at="2020-02-12T20:09:30Z" finished-at="2020-02-12T20:10:51Z">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUpTest -->
-        <test-method status="PASS" signature="setUpClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="setUpClass" is-config="true" duration-ms="830" started-at="2020-02-11T14:44:50Z" finished-at="2020-02-11T14:44:51Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUpClass -->
-        <test-method status="PASS" signature="feature(cucumber.api.testng.CucumberFeatureWrapper)[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="feature" duration-ms="8518" started-at="2020-02-11T14:44:51Z" description="Runs Cucumber Feature" data-provider="features" finished-at="2020-02-11T14:45:00Z">
-          <params>
-            <param index="0">
-              <value>
-                <![CDATA[Api service test]]>
-              </value>
-            </param>
-          </params>
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- feature -->
-        <test-method status="PASS" signature="tearDownClass()[pri:0, instance:com.test.MyRunner.TestNGTestRunner@dc24521]" name="tearDownClass" is-config="true" duration-ms="47" started-at="2020-02-11T14:45:00Z" finished-at="2020-02-11T14:45:00Z">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- tearDownClass -->
-      </class> <!-- com.test.MyRunner.TestNGTestRunner -->
-    </test> <!-- testing -->
-  </suite> <!-- Suite -->
+        </test-method> <!-- parametTC -->
+      </class> <!-- com.API.xmlPack.XmlParametrization -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
 </testng-results>

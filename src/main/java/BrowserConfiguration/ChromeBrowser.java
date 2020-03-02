@@ -8,7 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 /**
  * 
- * @author Bhanu Pratap Singh
+ * @author Rahul kumar
  *
  */
 public class ChromeBrowser {

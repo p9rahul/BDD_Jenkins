@@ -1,0 +1,351 @@
+#Show all databases and tables in DB#
+show databases;
+use DataBase;
+
+Show TABLES;
+
+---------------------
+1) DDL(Data Definition Language) -
+-It simply deals with descriptions of the database schema and is used to create and modify the structure of database objects
+CREATE, DROP , ALTER , TRUNCATE, COMMENT , RENAME
+
+2) DML(Data Manipulation Language)
+-It deals with manipulation of data present in the database
+
+INSERT , UPDATE, DELETE
+
+3) DQL (Data Query Language)
+-SELECT
+
+4) DCL(Data Control Language)
+-mainly deals with the rights
+
+GRANT and REVOKE
+
+5) TCL(transaction Control Language)
+TCL commands deals with the transaction within the database.
+
+COMMIT– commits a Transaction.
+ROLLBACK– rollbacks a transaction in case of any error occurs.
+
+---------------------
+Column(Filed or Attribute)
+Row (Record, tupple)
+
+
+#DESC#
+it discribe only table structure not row inside
+
+syntax - DESC TableName;
+
+#Data types#
+1) int or integer - -32K to 32K
+ex- rollNum int(10);
+
+2) Dec or decimal -
+ex - price decimal(4,2) = 1234.50
+
+3) char or character - range upto 255 characters
+ex- name char(20);
+
+4) varChar - range upto 255 characters
+if char >255 then DB converts into TEXT data types
+ex - name varchar(50);
+
+5) TEXT - Range upro 65K we can say String data types
+ex- address TEXT;
+
+6) Date - yyyy-mm-dd bydefault format
+ex- age DATE;
+
+7) DateTime - yyyy-mm-dd hh:mm:ss
+ex- DOJ DateTime
+
+8) TimeStamp - current time and date
+ex- login TimeStamp;
+
+###### DML ######
+Data Manupulation langugage
+
+- help contents
+-help data Manupulation
+
+# insert into multiple row at once.
+insert into table values(1,'Ram',25),(2,'Mohan',24),(3,'Rajesh',35);
+
+20. SELECT All or Particular Column records in SQL
+21. Single Quotes Problem in SQL
+insert into table values(1,'Ram's phone',25);
+insert into table values(1,'Ram\'s phone',25); // correct
+
+######22. SELECT with LIMIT in SQL ######
+select * from EMP LIMIT 5; // top 5 rows will display
+
+select * from EMP LIMIT 1,5;
+
+
+# Operator #
+1. =
+2. <> or !=  //null
+3. >
+4. <
+5. >=
+6. <=
+7. BETWEEN
+8. LIKE
+9. IN (allows multiple values in where clause)
+
+SELECT * FROM Customers
+where country ='uk';
+
+SELECT * FROM Customers
+where country <> 'uk';
+
+SELECT * FROM Orders
+where shipperID > 2;
+
+SELECT * FROM Orders
+where shipperID < 2;
+
+# is not null or not equal null
+SELECT * FROM Customers
+WHERE Address is not NULL; or WHERE Address <> NULL //not equal to null
+
+# is null or = null
+SELECT * FROM Customers
+WHERE Address is NULL; or WHERE Address = NULL;
+
+#And
+SELECT * FROM Customers
+where country= 'UK' and city ='London ';
+
+#OR
+SELECT * FROM Customers
+where country= 'UK' or country= 'USA';
+
+#Combination of AND & OR in SQL
+SELECT * FROM Customers
+where country= 'UK' AND (city ='Cowes' or city ='london');
+
+# IN
+SELECT * FROM Customers
+where country IN ('UK','USA');
+
+# Not in
+SELECT * FROM Customers
+where country not in ('UK','USA');
+
+#BETWEEN Number and not BETWEEN
+SELECT * FROM OrderDetails
+where ProductID between 65 and 72; // it includes 65 and 72
+
+#BETWEEN Text and not BETWEEN
+SELECT * FROM Customers
+where country between 'Belgium' and 'Germany'
+order by country desc;   // it includes Belgium and Germany both
+
+SELECT * FROM Customers
+where country between 'B' and 'G'
+order by country desc;  // it includes B but not G
+
+#BETWEEN DATE and not BETWEEN
+SELECT * FROM Orders
+WHERE OrderDate BETWEEN 'YYYY-MM-DD' AND 'YYYY-MM-DD';
+
+
+#BETWEEN with IN
+SELECT * FROM OrderDetails
+where (ProductID between 50 and 70)
+and Quantity in(35,40);
+
+-not in
+SELECT * FROM OrderDetails
+where (ProductID between 50 and 70)
+and Quantity not in(35,40);
+
+-------------------
+#LIKE operator with % WildCard in SQL
+
+WHERE CustomerName LIKE 'a%' - Finds any values that start with "a"
+WHERE CustomerName LIKE '%a' - Finds any values that end with "a"
+WHERE CustomerName LIKE '%or%' - Finds any values that have "or" in any position
+WHERE CustomerName LIKE '_r%' - Finds any values that have "r" in the second position
+WHERE CustomerName LIKE 'a__%' - Finds any values that start with "a" and are at least 3 characters in length
+WHERE ContactName LIKE 'a%o' - Finds any values that start with "a" and ends with "o"
+
+_ is a single character -suppose you need to check only 3 character which start with a then a__
+
+SELECT * FROM Customers WHERE City LIKE 'B__%';
+// Berlin, Buenos Aires, Bern , Barcelona
+
+
+---------------------
+#ORDER BY decending order in SQL
+1) DESC 2) ASC
+SELECT * FROM Customers
+where country between 'Belgium' and 'Germany'
+order by country desc;
+
+
+--------------------
+#UNIQUE KEY constraint
+- it ensures that all values in a column are different.
+
+--------------------
+#Primary KEY constraint
+- Unique idntify each records(means no duplicate value)
+- Can not contains null value
+- One table should have only one PK
+
+CREATE TABLE Student (
+    rollNum int NOT NULL UNIQUE,
+    LastName varchar(255),
+    FirstName varchar(255),
+    Age int,
+    PRIMARY KEY (ID)
+);
+
+--------------------
+#Starting AUTO INCREMENT with a particular Number in SQL
+Alter Table tableName columnName =10;
+
+#AUTO INCREMENT without specifying column name in SQL
+-pass null as idColumn
+
+--------------------
+# Alias in SQL
+- temporary rename(nickName) table and columns name
+-Table - select * from student as Student1;
+
+#Columns
+- select name as StudentName from  Student;
+- select name as "Student Name" from  Student;
+- select name "Student Name" from  Student;
+
+
+--------------------
+#Arithmetic Operators
+* / + -
+- select cost+10 NewCost from Product;
+- select cost-10 NewCost from Product;
+
+#SELECT DISTINCT in SQL
+- remove duplicate
+
+
+SELECT DISTINCT Country FROM Customers;
+SELECT COUNT(DISTINCT Country) FROM Customers;
+
+---------ALTER-----------
+- Add , change , modify, drop columns structure
+- Enable and disable columns constraint
+
+1) To add a column in a table
+ALTER TABLE tableName ADD Email varchar(255);
+
+2) To delete a column in a table - most of DB does not allow becasue lost of data
+-ALTER TABLE tableName DROP COLUMN columnName;
+ex- ALTER TABLE Customers DROP COLUMN Email;
+
+#DROP TABLE or Delete Table from database in SQL
+- delete / remove table
+- complete table will be deleted
+
+ex- Drop table test;
+
+
+# 1) Delete a row from a table
+DELETE From tableName
+where columnName = columnVal;
+
+ex- DELETE From Emp
+where name = 'Test';
+
+2) Delete all records not table
+- only delete data inside the table
+syntax - TRUNCATE table tableName;
+
+or
+Delete from EMP; or DELETE * from EMP;  // can not undo
+
+3) To change the data type of a column in a table
+ALTER TABLE table_name MODIFY column_name datatype;
+ex- ALTER TABLE Customers MODIFY COLUMN Email Text;
+
+#change cloumns name
+ALTER TABLE tableName Change column oldColumnsName  newColumnsName varChar(20);
+
+#change more than one cloumns name
+ALTER TABLE tableName
+Change column oldColumnsName  newColumnsName varChar(20),
+Change column oldColumnsName  newColumnsName varChar(20);
+
+#change cloumns name with constraint
+ALTER TABLE tableName
+Change column oldColumnsName  newColumnsName varChar(20) Not Null,
+Add PRIMARY KEY (newColumnsName);
+
+
+
+----------Rename ----------
+Syntax - Rename TABLE oldTable to NewTable;
+
+----------Show cloumns ----------
+- it is just like DESC discribe
+
+syntax - show columns from TableName;
+
+
+#############################
+79. Copy Old Table and rows to New Table within same Database in SQL
+
+Create table newTable like oldTable
+insert newTable select * from oldTable;
+
+ex-
+Create table newTeacher like oldTeacher
+insert newTeacher select * from oldTeacher;
+
+#############################
+Function
+
+1) MIN(ColumnName)
+2) MAX(ColumnName)
+3) SUM(ColumnName)
+4) AVG(ColumnName)
+5) SQRT(ColumnName)
+6) ROUND(ColumnName,decimal) ex- 10.55 means 10.6
+7) COUNT(ColumnName) or COUNT(*) //all records
+8) UPPER(ColumnName)
+9) LOWER(ColumnName)
+10) MID(ColumnName, start ,length) or subString(ColumnName, start ,length)
+11) LENGTH(ColumnName) // total text length like test = 4
+12) Concat(ColumnName1, ColumnName2) //joins 2 cloumns
+13) Reverse(ColumnName)
+14) Now() - current date time
+
+#############################
+Group By - use for grouping
+
+SELECT COUNT(CustomerID), Country
+FROM Customers
+GROUP BY Country;
+
+-Cannot group on fields selected with '*'.
+
+select country , count(country) as contryWiseCustomer FROM Customers
+GROUP BY Country;
+
+#############################
+Having - mostly use with group by
+
+select country , count(country) as contryWiseCustomer FROM Customers
+GROUP BY Country
+having count(country) > 2;
+
+#----------left Join ---------#
+q) Find OrderID which CustomerID 10 has ordered?
+
+select cus.CustomerID , cus.CustomerName,  ord.OrderID from Customers cus
+LEFT JOIN Orders ord ON  cus.CustomerID = ord.CustomerID
+where cus.CustomerID = 10;

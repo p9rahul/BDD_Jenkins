@@ -1,0 +1,73 @@
+Singleton classes - for any java class if we are allow to create only one object such type of class is called singleton class.
+wx - Runtime,
+
+Advantage -
+1) If several people have same requirement then it is not recomanded to a seperate object for every requirement
+   we have to create only one object and we can re-use the same object for similar requirement.
+2) Performance
+3) Memory utilization
+
+# create only one object and give to all whose have similar requirement
+- Java provides Runtime class
+Runtime r1= Runtime.getRuntime();
+Runtime r2= Runtime.getRuntime();
+Runtime r1L= Runtime.getRuntime();
+
+# How to create our own singleton class?
+- Use private constuctor
+- Private static variable
+- public factory method
+
+-------------------------------------------
+Approch 1) Create object at bigning - Factory approch
+
+public class Test {
+
+private static Test t = new Test(); //Obeject create
+
+private Test(){
+
+}
+
+public static Test getTest(){
+return t;
+}
+}
+
+ex - Runtime class internally implemented using this approch.
+
+-------------------------------------------
+Approch 2) Create object when it required 1st time and use for all
+
+public class Test {
+
+private static Test t = null;
+
+private Test(){
+
+}
+
+public static Test getTest(){
+if( t == null){
+t = new Test();
+}
+return t;
+}
+}
+
+-------------------------------------------
+q) How it is possible? when class is not final but we are not allow to create child class?
+-  BY declear every class private we can restrict child class creation.
+public class Test {
+
+private Test(){
+
+}
+}
+
+class child1 extends Test{
+
+}
+
+CTE - implicit super constructor Test() is not visible for default constructor. Must define an explicit constructor
+

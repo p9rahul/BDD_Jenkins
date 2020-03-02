@@ -1,0 +1,47 @@
+Absolute xpath: html/body/div[1]/section/div[1]/div/div/div/div[1]/div/div/div/div/div[3]/div[1]/div/h4[1]/b
+
+Relative xpath: here path starts from the middle of the HTML DOM structure
+//*[@class='featured-box']//*[text()='Testing']
+
+1) Basic XPath:
+Xpath=//input[@name='uid']
+
+
+2) Contains():
+
+name=btn123 and btn456
+Xpath=//*[contains(@name,'btn')]
+
+<a href="">Click here </a>
+Xpath=//*[contains(text(),'Click here')]
+
+3) Using OR & AND:
+Xpath=//*[@type='submit' or @name='btnReset']
+Xpath=//input[@type='submit' and @name='btnLogin']
+
+4) Starts-with function:
+For example -: Suppose the ID of particular element changes dynamically like:
+Id=" message12"
+Id=" message345"
+Id=" message8769"
+
+Xpath=//label[starts-with(@id,'message')]
+
+5) Text(): with text function, we find the element with exact text match as shown below.
+
+6) XPath axes methods:
+a) Following:
+Xpath=//*[@type='text']//following::input
+b) Ancestor:
+Xpath=//*[text()='Enterprise Testing']//ancestor::div
+c) Child:
+Xpath=//*[@id='java_technologies']/child::li
+d) Preceding:
+Xpath=//*[@type='submit']//preceding::input
+e) Following-sibling:
+xpath=//*[@type='submit']//following-sibling::input
+f) Parent:
+Xpath=//*[@id='rt-feature']//parent::div
+g) Self:
+Xpath =//*[@type='password']//self::input
+

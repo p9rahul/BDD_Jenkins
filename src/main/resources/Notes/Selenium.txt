@@ -1,0 +1,331 @@
+@CacheLookup
+
+Benifits of Automation -
+Time and money save - night run
+No manual interuptions - missing few TC
+Quality product
+Automate scenario and find bugs
+Huge aumount of Regression testing
+Compatabilty testing
+Maximum test coverage
+
+Q) What kind of testing we can do in Automation?
+Functional testing
+Regression in terms of Functiona
+--For Load and performance testing we have differents tools
+
+Q) Object reference name, becasue we can not create obj of interface
+WebDriver driver = new CD();
+-This is example fo dynamic polymorphism
+
+Q) SearchContext is super interface of the Webdriver.
+
+Q) Static wait and dynamic wait
+1)driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
+2)WebDriverWait wait=new WebDriverWait(driver, 20);
+wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath( "")));
+3)Wait<WebDriver> wait = new FluentWait<WebDriver>(driver)
+.withTimeout(30, TimeUnit.SECONDS)
+.pollingEvery(5, TimeUnit.SECONDS)
+.ignoring(NoSuchElementException.class);
+
+Q) stale element exception
+-When we do refersh a page then DOM will be refesh and will get this.
+
+----------------------------------------------
+Q: How would you automatically click a screenshot whenever an exception occurs?
+
+public static String takeSnapShot(WebDriver webdriver,String fileName) throws Exception{
+
+TakesScreenshot scrShot = ((TakesScreenshot) webdriver);
+File SrcFile = scrShot.getScreenshotAs(OutputType.FILE);
+String destinationPath = System.getProperty("user.dir")+"\\Reports\\screenshots\\"+fileName+new SimpleDateFormat("yyyy-MM-dd HH-mm-ss").format(new Date())+".png";
+File DestFile = new File(destinationPath);
+FileUtils.copyFile(SrcFile, DestFile);
+return destinationPath;
+    }
+----------------------------------------------
+Q: Give an example to perform drag and drop action In Selenium WebDriver?
+Actions act = new Actions(driver);
+act.dragAndDrop(source_locator, target_locator).build().perform();
+
+-doubleClick
+WebElement element = driver.findElement(By.xpath(""));
+Actions dummy = new Actions(driver);
+dummy.doubleClick(item).build().perform();
+
+Q: Right click operation in WebDriver?
+Actions test = new Actions(driver);
+test.moveToElement(element).perform();
+test.contextClick().perform();
+----------------------------------------------
+Q: How would you fill a text field without calling the sendKeys()?
+JavascriptExecutor JS = (JavascriptExecutor)driver;
+JS.executeScript("document.getElementById('User').value='admin@testmail.com'");
+
+-----------------------------------------------
+17: How would you scroll down the page using JavaScript?
+((JavascriptExecutor) driver).executeScript("window.scrollBy(0,750)");
+
+
+
+
+***********read json attribute value from response*************
+String value = JsonPath.read(response, "$..loanNumber").toString();
+
+<dependency>
+    <groupId>com.jayway.jsonpath</groupId>
+    <artifactId>json-path</artifactId>
+    <version>2.0.0</version>
+</dependency>
+
+
+***********read xml attribute value from response*************
+ DocumentBuilderFactory docFactory = DocumentBuilderFactory.newInstance();
+ DocumentBuilder docBuilder = docFactory.newDocumentBuilder();
+ Document document = docBuilder.parse(file);
+ Node parentList = document.getElementsByTagName(parent).item(0);
+-> using loop we can get attributes
+ 
+ XPath xpath = XPathFactory.newInstance().newXPath();
+ NodeList nodelist = (NodeList) xpath.compile("//EMBEDDED_FILE@_ID").evaluate(document, XPathConstants.NODESET);
+ String attributeValue = xpath.compile("//EMBEDDED_FILE@_ID").evaluate(nodelist.item(0));
+=============================Protractor for AngularJS Tutorial==================================
+1. - 1.
+1.protractor
+2.Jasmine api framework like TestNG
+cmd - npm install like mvn clean install
+
+
+1.Install visual Studio IDE
+2.Create project
+3.cmd NPM init
+4.Add dependency  in Add Dependency in package.json then cmd - npm install like mvn clean install
+5.Create 2 files 1.conf.js 2.myTest.js
+6.myTest.js - write test case here
+7.Conf.js - 1.write the selenium server hub URL 2.Map your test case class like myTest.js
+8.Run from cmd - protractor conf.js
+
+
+
+=============================Java==================================
+
+HashMap<String, String> map = new HashMap<>();  //null key and value allow
+map.put("key1", "val1");
+map.put(null, "val2");
+map.put(null, "val3");
+
+System.out.println(map);
+System.out.println("___________");
+
+TreeMap<String, String> map1=new TreeMap<>(); //null key not allowed but null value allow
+map1.put("key1", "val1");
+// map1.put(null, "val2");  
+map1.put("Key2", null);
+map1.put("Key3", null);
+
+System.out.println(map1);
+System.out.println("___________");
+
+LinkedHashMap<String, String> map3 =new LinkedHashMap<>(); //null key and value allow
+map3.put("Kay1", "v1");
+map3.put(null, "v2");
+map3.put(null, "v3");
+
+System.out.println(map3);
+
+
+===============================Test attributes===============================
+1)description -> @Test(description="This is testcase1")  
+2)timeOut     ->  
+3)priority -> @Test(priority=2)  
+4)dependsOnMethods -> @Test(dependsOnMethods= {"method1"})
+
+5)enabled ->  In TestNG, test cases can be disabled/enabled in two ways:
+a) @Test(enabled=false)    
+b)  Using exclude tag in xml suite file
+<methods>  
+  <exclude name = "MobileLoginCarLoan"/>  
+  </methods>  
+ 
+6)groups  -> @Test(groups= {"software company"})  
+
+# Running test cases with Regex
+<methods>  
+<include name="Mobile.*"/>  
+</methods>
+
+--------------------------------------------------------------------------------
+#TestNG Parameters
+@Parameters({"FeatureName", "RunAgainst", "Browser", "Customer","tags"})
+@BeforeTest
+ public void beforeTest(String FeatureName, String RunAgainst, String Browser, @Optional("false") String Customer,String tags)
+ 
+ <test name="UDMUI">
+        <classes>
+            <parameter name="FeatureName" value="/UDMUI/DispositionStatus.feature"/>
+            <parameter name="RunAgainst" value="QA"/>
+            <parameter name="Browser" value="Chrome"/>
+            <parameter name="tags" value="@Smoke1"/>
+            <parameter name="Customer" value="UDMUI"/>
+            <class name="com.equifax.ems.testrunner.RunCukesByCompositionTest"></class>
+        </classes>
+    </test>
+------------------------------------Type of Parameterization in TestNG---------------------------------------------
+
+There are two ways by which we can achieve parameterization in TestNG
+1.With the help of Parameters annotation and TestNG XML file.
+2.With the help of DataProvider annotation.
+
+#Now, parameters can be defined at 2 levels 1. Suite level 2.Test level
+
+#@Parameters annotation is easy but to test with "multiple sets of data" we need to use Data Provider.
+@DataProvider(name="EmpProvider")
+    public Object[][] getDataFromDataprovider(){
+    return new Object[][]
+    {
+            { "Emp1", "20" },
+            { "Emp2", "30" },
+            { "Emp3", "25" }
+        };
+
+    }
+
+Use in Test
+@Test(dataProvider="EmpProvider")
+
+
+----------------------------TestNG Listeners----------------------------------------------------
+ ITestListener interface- it has 7 methods
+ 
+ 1)
+ public class Testcases  
+{  
+@Test  
+public void testtopass()  
+{  
+Assert.assertTrue(true);  
+}  
+@Test  
+public void testtofail()  
+{  
+Assert.assertFalse(false);  
+}  
+}  
+
+2) public class Listener implements ITestListener  
+{  
+@Override  
+public void onTestStart(ITestResult result) {  
+}  
+
+@Override  
+public void onTestSuccess(ITestResult result) {  
+System.out.println("Success of test cases and its details are : "+result.getName());  
+}  
+
+@Override  
+public void onTestFailure(ITestResult result) {  
+// TODO Auto-generated method stub  
+System.out.println("Failure of test cases and its details are : "+result.getName());  
+}  
+ 
+    @Override  
+    public void onTestSkipped(ITestResult result) {  
+        // TODO Auto-generated method stub  
+        System.out.println("Skip of test cases and its details are : "+result.getName());  
+    }  
+ 
+    @Override  
+    public void onTestFailedButWithinSuccessPercentage(ITestResult result) {  
+        // TODO Auto-generated method stub  
+        System.out.println("Failure of test cases and its details are : "+result.getName());  
+    }  
+ 
+    @Override  
+    public void onStart(ITestContext context) {  
+        // TODO Auto-generated method stub  
+         
+    }  
+ 
+    @Override  
+    public void onFinish(ITestContext context) {  
+        // TODO Auto-generated method stub  
+         
+    }  
+
+-----------------------IRetryAnalyzer, IAnnotationTransformer list -----------------------
+For this 3 things we need to do.
+
+1) Create a clss implements IRetryAnalyzer
+public class RetryFailedTestCases implements IRetryAnalyzer {
+    private int retryCnt = 0;
+    private int maxRetryCnt = 2;
+   
+    public boolean retry(ITestResult result) {
+        if (retryCnt < maxRetryCnt) {
+            System.out.println("Retrying " + result.getName() + " again and the count is " + (retryCnt+1));
+            retryCnt++;
+            return true;
+        }
+        return false;
+    }
+   
+}
+
+2)
+public class RetryListenerClass implements IAnnotationTransformer {
+ 
+ @Override  //transform method is called for every test during test run.
+ public void transform(ITestAnnotation testannotation, Class testClass, Constructor testConstructor, Method testMethod) {
+ IRetryAnalyzer retry = testannotation.getRetryAnalyzer();
+ 
+ if (retry == null) {
+ testannotation.setRetryAnalyzer(RetryFailedTestCases.class);
+ }
+ 
+ }
+}
+
+3) Add listener in suite
+<listeners>
+        <listener class-name="softwareTestingMaterial.RetryListenerClass"/>
+</listeners>
+
+=================Manage Cookies============================
+Cookie cookie = new Cookie("key", "value");
+this.driver.Manage().Cookies.AddCookie(cookie);
+
+String cookies = this.driver.Manage().Cookies.AllCookies;
+
+this.driver.Manage().Cookies.DeleteCookieNamed("CookieName");
+
+=========================================================
+DesiredCapabilities cap = DesiredCapabilities.chrome();
+cap.setBrowserName("chrome");
+cap.setPlatform(Platform.ANY);
+RemoteWebDriver remoteDriver = new RemoteWebDriver(new URL("http://10.116.68.184:4444/wd/hub"), cap);
+this.context.driver = remoteDriver;
+
+-------------------------------------------------------
+cap.setCapability (CapabilityType.ACCEPT_SSL_CERTS, true)
+WebDriver driver = new ChromeDriver (cap);
+-------------------------------------------------------
+File folder=new File("Spectrum_UDM");
+
+System.setProperty("webdriver.chrome.driver", "C:\\Rahul\\driverExe\\chromedriver.exe");
+
+ChromeOptions options = new ChromeOptions();
+HashMap<String, Object> map1 = new HashMap<String, Object>();
+map1.put("profile.default_content_settings.popups", 0);
+map1.put("download.default_directory", folder.getAbsolutePath());
+
+options.setExperimentalOption("prefs", map1);
+
+DesiredCapabilities cap = DesiredCapabilities.chrome();
+cap.setCapability(ChromeOptions.CAPABILITY, options);
+
+System.setProperty("webdriver.chrome.driver", "C:\\Rahul\\driverExe\\chromedriver.exe");
+WebDriver driver = new ChromeDriver(cap);
+===============================================================
+

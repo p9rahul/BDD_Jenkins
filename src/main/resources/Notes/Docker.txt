@@ -1,0 +1,3 @@
+Zelenium will help you to create a container at run time and will be destroyed once execution will completed.
+
+Hub -> Node

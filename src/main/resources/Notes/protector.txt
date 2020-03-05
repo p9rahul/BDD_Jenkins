@@ -116,6 +116,28 @@ describe('Enter email',function()
 
 3) goto Terminal -> protractor conf.js
 ======================================================
+Run Multiple Test Cases
+
+-Add protector snippit code in VS -> 
 ======================================================
-======================================================
+Tutorial 5- How to Generate Reports in Protractor with Screenshot
+
+https://www.npmjs.com/package/protractor-beautiful-reporter
+
+1) change config file
+var HtmlReporter = require('protractor-beautiful-reporter');  // add one variable and add onPrepare function
+
+exports.config = {
+    seleniumAddress: 'http://localhost:4444/wd/hub',
+    specs: ['Test\\Module1.js'],
+
+    onPrepare: function() {
+      // Add a screenshot reporter and store screenshots to `/tmp/screenshots`:
+      jasmine.getEnv().addReporter(new HtmlReporter({
+         baseDirectory: 'Reports'
+      }).getJasmine2Reporter());
+    }
+  };
+  
+ =====================================================
 

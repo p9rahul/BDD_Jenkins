@@ -1,3 +1,85 @@
-Zelenium will help you to create a container at run time and will be destroyed once execution will completed.
+========================================
+install docker toolbox
+- C:\Users\Rahul\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Docker
 
-Hub -> Node
+https://github.com/SeleniumHQ/docker-selenium
+
+docker ps 
+or 
+docker ps -a
+
+// 1st pull then run
+docker pull selenium/hub
+docker pull selenium/node-chrome
+docker pull selenium/node-firefox
+
+
+docker run -d -p 4545:4444 --name selenium-hub selenium/hub
+# verify in browser - 
+http://localhost:4545
+
+*Note : fire this command on toolbox "docker-machine ip" default and get ip
+ then http://192.168.99.100:4545/grid/console
+
+docker run -d -P --link  selenium-hub:hub selenium/node-chrome-debug - if this image will not be present locally then docker will pull
+
+docker run -d -P --link  selenium-hub:hub selenium/node-firefox-debug
+
+====================================
+Now run a program
+
+@Test
+	public void testCase1() throws MalformedURLException, InterruptedException {
+		DesiredCapabilities cap = new DesiredCapabilities();
+		cap.setBrowserName(BrowserType.CHROME);
+		
+		WebDriver driver = new RemoteWebDriver(new URL("http://192.168.99.100:4545/wd/hub"),cap);
+		driver.get("http://google.com/");
+		driver.findElement(By.name("q")).sendKeys("Rahul padey");
+		Thread.sleep(5000);
+		driver.quit();
+		
+	}
+	
+====================================	
+zalenium will help you to create a container at run time and will be destroyed once execution will completed.
+
+
+
+
+1) What is traditional approach for selenium grid?
+consider image -> Docker selenium Hub -> 2 selenium Node
+
+Q) now question when you require new node then again manually we need to create a node.
+this is not a good approach, So scaling is issue. 
+Solution - zalenium -> 1st create container at run time and destroy once task completed.
+- so it will start grid and link required node at run time
+  
+A flexible and scalable container based Selenium Grid with video recording, live preview, basic auth & dashboard.
+
+
+2) Limitation of old Grid?
+
+3) What is zalenium ?
+4) How to setUp ?
+5) Create a new container at run time?
+
+https://opensource.zalando.com/zalenium/
+ # Pull docker-selenium
+    docker pull elgalu/selenium
+    
+    # Pull Zalenium
+    docker pull dosel/zalenium
+    
+    # Run it!
+    docker run --rm -ti --name zalenium -p 4444:4444 \
+      -v /var/run/docker.sock:/var/run/docker.sock \
+      -v /tmp/videos:/home/seluser/videos \
+      --privileged dosel/zalenium start
+      
+    # Point your tests to http://localhost:4444/wd/hub and run them
+
+    # Stop
+    docker stop zalenium
+    
+    

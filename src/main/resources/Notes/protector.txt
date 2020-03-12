@@ -1,6 +1,6 @@
 Q) What is protector?
 - Protector is an end to end test framework for angular JS application.
-- it is already inbuild framework for mainly angular JS application.
+- it is already in-build framework for mainly angular JS application.
 - It is build on top of webDriverJs, which internally uses native events and browser specific drivers to interact with your application. 
 - Protector works on top of Java script protocol so it can handle java script application easily.
 
@@ -17,6 +17,9 @@ Why?
 
 ======================================================
 Jasmine Framework or Mocha, Chai,  Karma
+
+Protractor == Selenium
+Jasmine == TestNG
 
 - It is a BDD framework for testing java script application.
 - By following BDD procedure, Jasmine provides a small syntax to test 
@@ -48,16 +51,16 @@ Protractor tutorial 3- How to Install Protractor On Windows
 -  https://nodejs.org/en/download/  - Download and install
 
 2) Install protector - https://www.protractortest.org/#/
-cmd #  npm install -g protractor
+cmd #  "npm install -g protractor"
 -verify 
 C:\Users\Rahul\AppData\Roaming\npm 
 C:\Users\Rahul\AppData\Roaming\npm\node_modules\protractor\example
 
-3)  webdriver-manager update
+3) cmd ->  "webdriver-manager update"   -update webdriver
 
 C:\Users\Rahul\AppData\Roaming\npm\node_modules\protractor\node_modules\webdriver-manager\selenium - here all browser exe will be installed
 
-4)   webdriver-manager start  -> Now start up a server with:
+4) cmd ->  "webdriver-manager start"  -> Now start up a server with:
 http://localhost:4444/wd/hub/static/resource/hub.html
 ======================================================
 Project setUP:-
@@ -65,7 +68,7 @@ Project setUP:-
 Editor - download "visual studio code" https://code.visualstudio.com/download
 #location downloaded folder -> C:\Users\Rahul\AppData\Local\Programs\Microsoft VS Code - 
 
-1) open visual studio terminal ->npm init and complete all steps
+1) open visual studio terminal ->npm init and complete all steps OR "npm install"
 2) open package.json in visual and add dependency
 {
   "name": "myprotectortest",

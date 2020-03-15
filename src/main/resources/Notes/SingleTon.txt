@@ -19,11 +19,11 @@ Runtime r1L= Runtime.getRuntime();
 - public factory method
 
 -------------------------------------------
-Approch 1) Create object at bigning - Factory approch
+Approach 1) Create object at begning - Factory approach
 
 public class Test {
 
-private static Test t = new Test(); //Obeject create
+private static Test t = new Test(); //Object create
 
 private Test(){
 
@@ -57,7 +57,7 @@ return t;
 
 -------------------------------------------
 q) How it is possible? when class is not final but we are not allow to create child class?
--  BY declear every class private we can restrict child class creation.
+-  BY declare every class private we can restrict child class creation.
 public class Test {
 
 private Test(){

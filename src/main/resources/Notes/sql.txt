@@ -25,8 +25,30 @@ GRANT and REVOKE
 5) TCL(transaction Control Language)
 TCL commands deals with the transaction within the database.
 
-COMMIT– commits a Transaction.
-ROLLBACK– rollbacks a transaction in case of any error occurs.
+COMMITâ€“ commits a Transaction.
+ROLLBACKâ€“ rollbacks a transaction in case of any error occurs.
+Save point
+
+DDL commands are auto commit so rollback will not work with DDL.
+DML - not auto commit- so rollback works with dml.
+
+Ex-
+Begin tran
+Delete from tabla;
+
+Begin tran
+Rollback;
+
+Acid property of a transaction.
+1) atomicity
+2) consistency
+3) Isolation
+4) Durability
+
+# Delete from table and Truncate table tableName
+Both deletes all rows from a table without deleting 
+Table. But what is the difference?
+- truncate can not be roll back and it is faster.
 
 ---------------------
 Column(Filed or Attribute)
